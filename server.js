@@ -10,7 +10,7 @@ app.use(cors());
 app.use(express.json());
 
 const JWT_SECRET = "souvik_secret_key";
-mongoose.connect("KINDLY USE YOUR OWN DATABASE URL HERE.... ")
+mongoose.connect("")//KINDLY USE YOUR OWN DATABASE URL HERE.... 
   .then(() => console.log("MongoDB Connected"))
   .catch((err) => console.log(err));
 
