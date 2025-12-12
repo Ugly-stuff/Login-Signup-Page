@@ -4,13 +4,15 @@ import cors from "cors";
 import User from "./models/User.js";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
+import dotenv from "dotenv";
 
+dotenv.config();
 const app = express();
 app.use(cors());
 app.use(express.json());
 
 const JWT_SECRET = "souvik_secret_key";
-mongoose.connect("")//KINDLY USE YOUR OWN DATABASE URL HERE.... 
+mongoose.connect(process.env.MONGO_URL)
   .then(() => console.log("MongoDB Connected"))
   .catch((err) => console.log(err));
 
@@ -25,7 +27,6 @@ app.post("/signup", async (req, res) => {
     
     const existingUser = await User.findOne({ email });
     if (existingUser) return res.json({ status: "error", message: "User already exists" });
-
     const newUser = new User({ email, password });
     await newUser.save();
     res.json({ status: "ok", message: "User Registered Successfully" });
