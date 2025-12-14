@@ -10,7 +10,7 @@ const AuthForm = () => {
   const submitHandler = async (e) => {
     e.preventDefault()
 
-    let url = isLogin ? "http://localhost:5000/login" : "http://localhost:5000/signup";
+    let url = isLogin ? `${import.meta.env.VITE_API_URL}/login` : `${import.meta.env.VITE_API_URL}/signup`;
 
     const res = await fetch(url, {
       method: "POST",
