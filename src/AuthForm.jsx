@@ -37,7 +37,7 @@ const AuthForm = () => {
 
   return (
     <>
-      <div className="min-h-screen flex items-center justify-center bg-[rgb(17,115,154)]">
+      <div className="min-h-screen flex items-center justify-center bg-[rgb(69,225,48)]">
         <div className="bg-white rounded-2xl shadow-md p-4 w-[320px]">
           <div className="flex justify-center bg-gray-100 rounded-4xl overflow-hidden font-bold">
             <button
