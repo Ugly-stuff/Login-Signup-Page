@@ -14,7 +14,7 @@ app.use(cors({
   credentials: true
 }));
 
-app.options("*", cors());
+app.options(/.*/, cors());
 app.use(express.json());
 
 const JWT_SECRET = process.env.JWT_SECRET;
